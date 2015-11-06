@@ -1,0 +1,52 @@
+module l3-device-impl {
+	yang-verison 1;
+	namespace "urn:onos:yangpromotion:impl:l3device";
+	prefix "l3dev-impl";
+
+	import config { prefix "config"; revision-date "2015-10-01";}
+	import core-binding {prefix "core"; revision-date "2015-10-01";}
+
+	description
+	  "this module contains the base YANG definiations fore l3dev implementation";
+
+	revision 2015-10-01 {
+		description
+		  "initial version";
+	}
+
+	identity l3dev-impl {
+		base config:module-type;
+		config:java-name-prefix L3dev;
+	}
+
+	augment "/config:modules/config:module/config:configuration" {
+		case l3dev-impl {
+		  when "/config:modules/config:module/config:type = 'l3dev-impl'";
+
+		  container core-service {
+		    uses config:service-ref {
+		      refine type {
+		        mandatory true;
+		        config:required-identity core:core-device-service;
+		      }
+		    }
+		  }
+		  container core-store {
+		    uses config:service-ref {
+		      refine type {
+		        mandatory true;
+		        config:required-identity core:core-device-store;
+		      }
+		    }
+		  }
+		  container core-event {
+		    uses config:service-ref {
+		      refine type {
+		        mandatory true;
+		        config:required-identity core:core-device-event;
+		      }
+		    }
+		  }
+		}
+	}
+}

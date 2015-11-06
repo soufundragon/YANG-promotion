@@ -1,0 +1,29 @@
+module core-binding {
+	yang-version 1;
+	namespace "urn:onos:core:binding";
+	prefix "core-binding";
+	import config {prefix "config"; revision-date "2015-10-01";}
+
+	description
+	  "service definition for core binding";
+
+	  revision "2015-10-01" {
+	  	description
+	  	  "Initial revision";
+	  }
+
+	  identity core-device-service {
+	  	base "config:service-type";
+	  	config:java-class "org.onos.yang.gen.v1.urn.onos.core.service";
+	  }
+
+	  identity core-device-store {
+	  	base "config:service-type";
+	  	config:java-class "org.onos.yang.gen.v1.urn.onos.core.store";
+	  }
+
+	  identity core-device-event {
+	  	base "config:service-type";
+	  	config:java-class "org.onos.yang.gen.v1.urn.onos.core.event";
+	  }
+}

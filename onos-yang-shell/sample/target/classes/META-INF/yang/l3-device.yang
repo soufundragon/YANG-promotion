@@ -1,0 +1,35 @@
+module l3-device {
+	yang-version 1;
+	namespace "urn:onos:yangpromotion:def:l3device";
+	prefix "l3dev";
+
+	import core-device {prefix core-dev; revision-date "2015-10-01";}
+	import ietf-inet-types {prefix inet; revision-date "2010-09-24";}
+	import yang-ext {prefix ext; revision-date "2013-07-09";}
+
+	revision "2015-10-01" {
+		description
+		  "reworked to give modules their own space";
+	}
+
+	container l3-device {
+		uses core-dev:core-device {
+			augment device {
+			  ext:augment-identifier "l3-device";
+			  uses connection;
+			}
+		}
+	}
+
+	grouping connection {
+	  leaf ip {
+	  	type inet:ipv4-address;
+	  }
+	  leaf user {
+	    type string;
+	  }
+	  leaf password {
+	    type string;
+	  }
+	}
+}

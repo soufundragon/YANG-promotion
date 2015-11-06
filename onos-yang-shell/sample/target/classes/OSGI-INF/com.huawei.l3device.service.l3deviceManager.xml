@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><components xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0">
+    <scr:component immediate="true" name="com.huawei.l3device.service.l3deviceManager" activate="activate" deactivate="deactivate">
+        <implementation class="com.huawei.l3device.service.l3deviceManager"/>
+        <service servicefactory="false">
+            <provide interface="com.huawei.l3device.service.l3deviceService"/>
+        </service>
+        <property name="service.pid" value="com.huawei.l3device.service.l3deviceManager"/>
+        <reference name="systemAgentService" interface="org.onos.system.agent.Agent" cardinality="1..1" policy="static" bind="bindSystemAgentService" unbind="unbindSystemAgentService"/>
+    </scr:component>
+</components>

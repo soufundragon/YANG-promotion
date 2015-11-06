@@ -1,0 +1,7 @@
+org.onos.yang.gen.v1.urn.onos.core.device.rev151001.$YangModelBindingProvider
+org.onos.yang.gen.v1.urn.onos.yangpromotion.def.l3device.rev151001.$YangModelBindingProvider
+org.onos.yang.gen.v1.urn.onos.yang.extension.yang.ext.rev130709.$YangModelBindingProvider
+org.onos.yang.gen.v1.urn.onos.yangpromotion.impl.l3device.rev151001.$YangModelBindingProvider
+org.onos.yang.gen.v1.urn.onos.core.binding.rev151001.$YangModelBindingProvider
+org.onos.yang.gen.v1.urn.ietf.params.xml.ns.yang.ietf.inet.types.rev100924.$YangModelBindingProvider
+org.onos.yang.gen.v1.urn.onos.params.xml.ns.yang.controller.config.rev151001.$YangModelBindingProvider

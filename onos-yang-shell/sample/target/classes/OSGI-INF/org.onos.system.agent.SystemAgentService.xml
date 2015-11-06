@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?><components xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0">
+    <scr:component immediate="true" name="org.onos.system.agent.SystemAgentService" activate="activate" deactivate="deactivate">
+        <implementation class="org.onos.system.agent.SystemAgentService"/>
+        <service servicefactory="false">
+            <provide interface="org.onos.system.agent.Agent"/>
+        </service>
+        <property name="service.pid" value="org.onos.system.agent.SystemAgentService"/>
+    </scr:component>
+</components>

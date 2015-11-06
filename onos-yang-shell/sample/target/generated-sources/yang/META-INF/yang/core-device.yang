@@ -1,0 +1,80 @@
+module core-device {
+	yang-version 1;
+
+	namespace "urn:onos:core:device";
+	prefix core-dev;
+
+	import ietf-inet-types {prefix "inet"; revision-date "2010-09-24";}
+
+	revision "2015-10-01" {
+		description
+		  "core device module draft";
+	}
+
+	identify core-device {
+	  description
+	    "base identity of core device";
+	}
+
+	typedef support-type {
+		type enumeration {
+		  enum switch;
+		  enum router;
+		  enum roadm;
+		  enum otn;
+		  enum roadm-otn;
+		  enum firewall;
+		  enum balancer;
+		  enum ips;
+		  enum ids;
+		  enum controller;
+		  enum other;
+		}
+	}
+
+	typedef device-id {
+		type inet:uri;
+	}
+
+	typedef chassis-idx {
+		type uint32;
+	}
+
+	grouping core-device {
+	  container device {
+		leaf id {
+		  type device-id;
+		}
+
+		leaf type {
+		  type support-type;
+		}
+
+		leaf manufacturer {
+		  type string;
+		}
+
+		leaf hw-version {
+		  type string;
+		}
+
+		leaf sw-version {
+		  type string;
+		}
+
+		leaf serial-number {
+		  type string;
+		}
+
+		leaf chassis {
+		  type chassis-idx;
+		}
+	  }
+	}
+
+	container devices {
+	  list "device" {
+	    uses core-device;
+	  }
+	}
+}
