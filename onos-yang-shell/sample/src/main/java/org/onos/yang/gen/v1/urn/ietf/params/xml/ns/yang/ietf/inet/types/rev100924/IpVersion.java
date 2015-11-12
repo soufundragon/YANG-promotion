@@ -39,7 +39,7 @@ public enum IpVersion {
         VALUE_MAP = b.build();
     }
 
-    private IpVersion(int value) {
+    IpVersion(int value) {
         this.value = value;
     }
 

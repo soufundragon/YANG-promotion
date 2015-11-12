@@ -33,7 +33,7 @@ public interface ServiceRef
 
 
 
-    public static final QName QNAME = org.onos.yangtools.yang.common.QName.cachedReference(org.onos.yangtools.yang.common.QName.create("urn:onos:params:xml:ns:yang:controller:config","2015-10-01","service-ref"));
+    QName QNAME = org.onos.yangtools.yang.common.QName.cachedReference(org.onos.yangtools.yang.common.QName.create("urn:onos:params:xml:ns:yang:controller:config","2015-10-01","service-ref"));
 
     /**
      * Type of the service being referenced. Users of this grouping should refine this 

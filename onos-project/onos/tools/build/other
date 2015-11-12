@@ -2,7 +2,12 @@
 
 start_mv(){
 	
-	m=`cat ${M2_REPO}`/$1 | grep bundle | sed 's/<[^<>]*>//g' | sed '.*n://g'`
+  if [[ ! -e ${M2_REPO}/$1 ]] ; then
+    file_dir=${ONOS_STAGE}/${KARAF_DIST}/system/$1
+  else
+    file_dir=${M2_REPO}/$1
+  fi
+	m=`cat $file_dir | grep bundle | sed 's/<[^<>]*>//g' | sed '.*n://g'`
 
 	for n in $m
 	do

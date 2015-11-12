@@ -1,0 +1,118 @@
+module yang-link{
+	yang-version 1;
+	namespace "urn:onos:yangpromotion:def:link";
+	prefix "link";
+
+	import connect-point {prefix cp; revision-date "2015-10-01";}
+	import yang-link-definition {prefix yld; revision-date "2015-10-01";}
+	import yang-ext {prefix ext; revision-date "2013-07-09";}
+	import config {prefix config; revision-date "2015-10-01";}
+
+	revision "2015-10-01" {
+		description
+		  "onos core link defination.";
+	}
+
+
+    rpc get-link-count {
+       output {
+          leaf result {
+             type int32;
+          }
+       }
+    }
+    
+    rpc get-links {
+        output {
+            uses links;
+        }
+    }
+    
+    rpc get-active-links {
+        output {
+            uses links;
+        }
+    }
+    
+    rpc get-device-links {
+        input {
+            leaf device-id {
+                type string;
+            }
+        }
+        output {
+            uses links;
+        }
+    }
+    
+    rpc get-device-ingress-links {
+        input {
+            leaf device-id {
+                type string;
+            }
+        }
+        output {
+            uses links;
+        }
+    }
+    rpc get-device-egress-links {
+        input {
+            leaf device-id {
+                type string;
+            }
+        }
+        output {
+            uses links;
+        }
+    }
+    rpc get-Links{
+        input {
+           uses cp:connect-point;
+        }
+        output {
+            uses links;
+        }
+    }
+    rpc get-egress-links {
+        input {
+           uses cp:connect-point;
+        }
+        output {
+           uses links;
+        }
+    }
+
+    rpc get-ingress-links {
+        input {
+           uses cp:connect-point;
+        }
+        output {
+           uses links;
+        }
+    }
+
+    rpc get-link {
+        input {
+          container src {
+             uses cp:connect-point;
+          }
+          container dst {
+             uses cp:connect-point;
+          }
+        }
+        output {
+          uses yld:link;
+        }
+    }
+
+    grouping links {
+        list links {
+           uses yld:link;
+        }
+    }
+
+    rpc add-listener {}
+
+    rpc remove-listener {}
+
+}

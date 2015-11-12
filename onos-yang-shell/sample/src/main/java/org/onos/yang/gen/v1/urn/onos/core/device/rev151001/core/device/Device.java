@@ -51,7 +51,7 @@ public interface Device
 
 
 
-    public static final QName QNAME = org.onos.yangtools.yang.common.QName.cachedReference(org.onos.yangtools.yang.common.QName.create("urn:onos:core:device","2015-10-01","device"));
+    QName QNAME = org.onos.yangtools.yang.common.QName.cachedReference(org.onos.yangtools.yang.common.QName.create("urn:onos:core:device","2015-10-01","device"));
 
     DeviceId getId();
     

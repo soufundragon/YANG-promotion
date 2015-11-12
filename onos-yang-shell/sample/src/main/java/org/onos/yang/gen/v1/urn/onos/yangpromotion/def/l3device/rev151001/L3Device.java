@@ -74,7 +74,7 @@ public interface L3Device
 
 
 
-    public static final QName QNAME = org.onos.yangtools.yang.common.QName.cachedReference(org.onos.yangtools.yang.common.QName.create("urn:onos:yangpromotion:def:l3device","2015-10-01","l3-device"));
+    QName QNAME = org.onos.yangtools.yang.common.QName.cachedReference(org.onos.yangtools.yang.common.QName.create("urn:onos:yangpromotion:def:l3device","2015-10-01","l3-device"));
 
 
 }

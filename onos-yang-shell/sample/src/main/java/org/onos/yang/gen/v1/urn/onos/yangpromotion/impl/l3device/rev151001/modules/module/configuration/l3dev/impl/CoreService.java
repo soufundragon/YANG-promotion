@@ -42,7 +42,7 @@ public interface CoreService
 
 
 
-    public static final QName QNAME = org.onos.yangtools.yang.common.QName.cachedReference(org.onos.yangtools.yang.common.QName.create("urn:onos:yangpromotion:impl:l3device","2015-10-01","core-service"));
+    QName QNAME = org.onos.yangtools.yang.common.QName.cachedReference(org.onos.yangtools.yang.common.QName.create("urn:onos:yangpromotion:impl:l3device","2015-10-01","core-service"));
 
 
 }

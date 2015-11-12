@@ -43,7 +43,7 @@ public enum SupportType {
         VALUE_MAP = b.build();
     }
 
-    private SupportType(int value) {
+    SupportType(int value) {
         this.value = value;
     }
 

@@ -1,0 +1,39 @@
+module connect-point{
+	yang-version 1;
+	namespace "urn:onos:yangpromotion:def:link:connect:point";
+	prefix "cp";
+
+	import yang-ext {prefix ext; revision-date "2013-07-09";}
+	import config {prefix config; revision-date "2015-10-01";}
+
+	revision "2015-10-01" {
+		description
+		  "onos core connect point defination.";
+	}
+
+    
+    typedef host-id {
+       type element-id;
+    }
+    typedef device-id {
+       type element-id;
+    }
+    typedef ip-element-id {
+       type element-id;
+    }
+    typedef element-id{
+       type string;
+    }
+    typedef port-number{
+       type int32;
+    }
+    grouping connect-point {
+        leaf element-id {
+           type element-id;
+        }
+        leaf port-number {
+           type port-number;
+        }
+    }
+
+}

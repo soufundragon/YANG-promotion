@@ -1,0 +1,74 @@
+module yang-link-definition{
+	yang-version 1;
+	namespace "urn:onos:yangpromotion:def:link:definition";
+	prefix "link";
+
+	import connect-point {prefix cp; revision-date "2015-10-01";}
+	import ietf-inet-types {prefix inet; revision-date "2010-09-24";}
+	import yang-ext {prefix ext; revision-date "2013-07-09";}
+	import config {prefix config; revision-date "2015-10-01";}
+
+	revision "2015-10-01" {
+		description
+		  "onos core link defination.";
+	}
+
+
+    typedef type-def {
+        type enumeration {
+            enum DIRECT{
+              description "Signifies that this is a direct single-segment link.";
+            }
+            enum INDIRECT{
+              description "Signifies that this link is potentially comprised from multiple
+                                     underlying segments or hops, and as such should be used to tag
+                                     links traversing optical paths, tunnels or intervening 'dark'
+                                     switches.";
+            }
+            enum EDGE {
+              description "Signifies that this link is an edge, i.e. host link.";
+            }
+            enum TUNNEL {
+              description "Signifies that this link represents a logical link backed by
+                                    some form of a tunnel, e.g., GRE, MPLS, ODUk, OCH.";
+            }
+            enum OPTICAL {
+              description "Signifies that this link is realized by fiber (either single channel or WDM).";
+            }
+            enum VIRTUAL {
+              description "Signifies that this link is a virtual link or a pseudo-wire.";
+            }
+        }
+    }
+
+    typedef state {
+      type enumeration {
+        enum ACTIVE{
+          description "Signifies that a link is currently active.";
+        }
+        enum INACTIVE{
+          description "Signifies that a link is currently active.";
+        }
+      }
+    }
+    
+    grouping link {
+        container src {
+            uses cp:connect-point;
+        }
+        container dst {
+            uses cp:connect-point;
+        }
+        leaf state {
+            type state;
+        }
+        leaf type {
+            type type-def;
+        }
+        leaf durable {
+            type boolean;
+        }
+    }
+    
+
+}

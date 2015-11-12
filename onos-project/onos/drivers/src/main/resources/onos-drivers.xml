@@ -130,5 +130,10 @@
         <behaviour api="org.onosproject.openflow.controller.driver.OpenFlowSwitchDriver"
                    impl="org.onosproject.driver.handshaker.OFOpticalSwitch13"/>
     </driver>
+    
+    <driver name="huawei" extends="default" manufacturer="huawei factory" hwVersion="optical" swVersion="v8">
+        <behaviour api="org.onosproject.net.behaviour.Pipeliner" 
+                   impl="org.onosproject.openflow.controller.driver.OpenFlowSwitchDriver"/>
+    </driver>
 </drivers>
 
